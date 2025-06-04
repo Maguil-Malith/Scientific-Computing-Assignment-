@@ -1,0 +1,83 @@
+Bsccs/2024/37519
+Assignment 1
+
+a) Temperature Line Graph
+python
+import matplotlib.pyplot as plt
+
+# Temperature data
+days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+temperatures = [20, 22, 19, 23, 21, 24, 20]
+
+# Create the plot
+plt.figure(figsize=(8, 4))
+plt.plot(days, temperatures, marker='o', linestyle='-', color='b')
+
+# Add titles and labels
+plt.title('Weekly Temperature Readings')
+plt.xlabel('Day of the Week')
+plt.ylabel('Temperature (°C)')
+plt.grid(True)
+
+# Show the plot
+plt.show()
+b) Arithmetic Sequence
+python
+# Generate arithmetic sequence
+start = 5
+difference = 3
+terms = 8
+
+sequence = [start + i * difference for i in range(terms)]
+
+print("Arithmetic sequence:", sequence)
+c) Volume Calculation under Surface
+python
+import numpy as np
+
+def z_function(x, y):
+    return x**2 + y**2
+
+# Number of divisions for Riemann sum
+n = 1000
+
+# Create grid of points
+x = np.linspace(0, 1, n)
+y = np.linspace(0, 1, n)
+X, Y = np.meshgrid(x, y)
+
+# Calculate function values
+Z = z_function(X, Y)
+
+# Calculate volume using Riemann sum
+dx = 1/n
+dy = 1/n
+volume = np.sum(Z) * dx * dy
+
+print(f"Approximate volume under the surface: {volume:.6f}")
+d) Compiled vs Interpreted Languages
+Compiled Languages:
+
+Source code is translated to machine code entirely before execution (compilation step)
+
+Generally faster execution as the code is already in machine language
+
+Errors are typically caught during compilation
+
+Examples: C, C++, Rust, Go
+
+Interpreted Languages:
+
+Code is executed line by line by an interpreter at runtime
+
+More flexible as code can be modified and run immediately
+
+Generally slower than compiled languages
+
+Errors may only be discovered when the problematic line is executed
+
+Examples: Python, JavaScript, Ruby
+
+Python's Classification:
+Python is primarily an interpreted language. When you run a Python script, the Python interpreter reads and executes the code line by line. However, Python does have a compilation step where source code is converted to bytecode (.pyc files), which is then interpreted by the Python Virtual Machine (PVM). This makes Python a "compiled-interpreted" language in some classifications, though it's generally considered interpreted because the bytecode is not machine code and still requires the interpreter to run.
+
